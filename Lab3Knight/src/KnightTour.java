@@ -1,3 +1,6 @@
+/**
+ * Created by spencers1 on 10/23/2017.
+ */
 public class KnightTour {
     private int N;
 
@@ -6,7 +9,7 @@ public class KnightTour {
     }
 
     public static void main(String[] args) {
-        KnightTour kt = new KnightTour(8);
+        KnightTour kt = new KnightTour(7);
         kt.solve();
     }
     private boolean isOpen(int x, int y, int ar[][]) {
@@ -23,8 +26,9 @@ public class KnightTour {
         for (int x = 0; x < N; x++) {
             for (int y = 0; y < N; y++) {
                 System.out.print(ar[x][y] + " ");
-                System.out.println();
+
             }
+            System.out.println();
         }
     }
 
