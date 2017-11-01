@@ -1,69 +1,37 @@
+import java.util.EmptyStackException;
 
-public class MyStack<T> implements StackInterface<T> {
+public class MyStack<T> {
 
-	private class Node<T> {
-		public T data;
-		public Node<T> next;
+    private static class Node<T> {
+        private T data;
+        private Node<T> next;
 
-		
-		public Node(T o) {
-			this.data = o;
-			this.next = null;
-		}
-	}
-	
-	MyLinkedList list = new MyLinkedList();
-	private Node<T> head;
-	public MyStack() {
-		head = null;
-	
-	}
+        public Node(T data) {
+            this.data = data;
+        }
+    }
 
-	@Override
-	public void push(T item) {
-//		Node<T> newHead = new Node<T>(item);
-//		newHead.next = head;
-//		head = newHead;
-		list.shift(1);
-		list.add(0, item);
-	}
-		
+    private Node<T> top;
 
-	@Override
-	public T pop() {
-		
-		return null;
-	}
+    public T pop() {
+        if (top == null) throw new EmptyStackException();
+        T item = top.data;
+        top = top.next;
+        return item;
+    }
 
-	@Override
-	public int size() {
-		
-		return 0;
-	}
+    public void push(T item) {
+        Node<T>  node = new Node<T>(item);
+        node.next = top;
+        top = node;
+    }
 
-	@Override
-	public boolean isEmpty() {
-	
-		return false;
-	}
+    public T peek() {
+        if (top == null) throw new EmptyStackException();
+        return top.data;
+    }
 
-	@Override
-	public void Clear() {
-	
-		
-	}
-
-	@Override
-	public T first() {
-		
-		return null;
-	}
-
-	@Override
-	public T next() {
-	
-		return null;
-	}
-	
-
+    public boolean isEmpty() {
+        return top == null;
+    }
 }
