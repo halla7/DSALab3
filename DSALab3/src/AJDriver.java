@@ -1,14 +1,13 @@
-
 public class AJDriver {
-	static String mString="23-52*3*+4+";  // 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ
-	static int mVal1, mVal2, mTotal;
-	
-	public static void main(String[] args){
+    static String mString="23-52*3*+4+";
+    static int mVal1, mVal2, mTotal;
+
+    public static void main(String[] args){
 //		PostfixCalculator calc = new PostfixCalculator();
 //		System.out.println(calc.convertToPostfix("2 3 - 5 2 * 3 * + 4 +"));
-		
-		InfixCalculator inCalc = new InfixCalculator();
-		System.out.println(inCalc.infixToPostfix("(((2-3)+((5*2)*3))+4)"));
+//
+        InfixCalculator inCalc = new InfixCalculator();
+        System.out.println(inCalc.infixToPostfix("(((2 - 3) + ((5 * 2) * 3)) + 4)"));
 //		StackList<Character> myCharStack = new StackList("CharacterStack");
 //		StackList<Integer> myIntStack = new StackList("IntegerStack");
 //		for (int i=0; i<mString.length(); ++i){
@@ -36,13 +35,13 @@ public class AJDriver {
 //					System.out.println(mVal1+" + "+mVal2+" = "+mTotal);
 //				}else if (mString.charAt(i)=='-') {
 //					mTotal=mVal1-mVal2;
-//					System.out.println(mVal1+" - "+mVal2+" = "+mTotal);	
+//					System.out.println(mVal1+" - "+mVal2+" = "+mTotal);
 //				}else if (mString.charAt(i)=='*') {
 //					mTotal=mVal1*mVal2;
-//					System.out.println(mVal1+" * "+mVal2+" = "+mTotal);	
+//					System.out.println(mVal1+" * "+mVal2+" = "+mTotal);
 //				}else if (mString.charAt(i)=='/') {
 //					mTotal=mVal1/mVal2;
-//					System.out.println(mVal1+" / "+mVal2+" = "+mTotal);	
+//					System.out.println(mVal1+" / "+mVal2+" = "+mTotal);
 //				}
 //				myIntStack.push(mTotal);
 //			}
@@ -61,10 +60,10 @@ public class AJDriver {
 //		System.out.println("Last item in stack now              :"+myList.first());
 //		System.out.println("Next to last item in stack now      :"+myList.next());
 //		System.out.println("When using get the last item in stack is :"+myList.get(myList.size()));
-	}
-	
-	static int getValue(char digit) {
-		switch (digit)
+    }
+
+    static int getValue(char digit) {
+        switch (digit)
         {
             case '1': return 1;
             case '2': return 2;
@@ -79,6 +78,6 @@ public class AJDriver {
         } // end switch
 
         return 0;
-		
-	}
+
+    }
 }
